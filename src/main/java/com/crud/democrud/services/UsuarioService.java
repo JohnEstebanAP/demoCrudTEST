@@ -43,7 +43,6 @@ public class UsuarioService {
     public void update(Long id, UsuarioModel usuario) {
         Optional<UsuarioModel> existsUsuario = usuarioRepository.findById(id);
         if (existsUsuario.isPresent()) {
-
             existsUsuario.get().setId(usuario.getId());
             existsUsuario.get().setNombre(usuario.getNombre());
             existsUsuario.get().setEmail(usuario.getEmail());

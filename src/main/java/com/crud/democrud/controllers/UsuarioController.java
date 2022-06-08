@@ -1,6 +1,7 @@
 package com.crud.democrud.controllers;
 
 import com.crud.democrud.models.UsuarioModel;
+import com.crud.democrud.models.UsuarioRolModel;
 import com.crud.democrud.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +44,11 @@ public class UsuarioController {
         } else {
             return "No pudo eliminar el usuario con id" + id;
         }
+    }
+
+    @PutMapping("/{id}")
+    public void update(@PathVariable Long id, @RequestBody UsuarioModel usuario){
+        usuarioService.update(id, usuario);
     }
 
 }

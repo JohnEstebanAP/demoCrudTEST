@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class UsuarioRolModel {
     @Id
     @Column(name = "id_usuario")
-    private int idUsuario;
+    private Long idUsuario;
 
     @Column(name = "id_rol")
     private int idRol;
@@ -18,7 +18,7 @@ public class UsuarioRolModel {
     @Column(name = "rol")
     private String rol;
 
-    public UsuarioRolModel(int idUsuario, int idRol, String rol) {
+    public UsuarioRolModel(Long idUsuario, int idRol, String rol) {
         this.idUsuario = idUsuario;
         this.idRol = idRol;
         this.rol = rol;
@@ -28,11 +28,11 @@ public class UsuarioRolModel {
 
     }
 
-    public int getIdUsuario() {
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
 
