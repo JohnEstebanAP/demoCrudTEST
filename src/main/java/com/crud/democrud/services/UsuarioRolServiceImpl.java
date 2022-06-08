@@ -1,5 +1,6 @@
 package com.crud.democrud.services;
 
+import com.crud.democrud.models.UsuarioModel;
 import com.crud.democrud.models.UsuarioRolModel;
 import com.crud.democrud.repositories.UsuarioRolRepository;
 import com.crud.democrud.services.iface.UsuarioRolService;
@@ -33,6 +34,9 @@ public class UsuarioRolServiceImpl implements UsuarioRolService {
         return usuarioRolRepository.findById(id);
     }
 
+    public ArrayList<UsuarioRolModel>  getByRol(int prioridad) {
+        return usuarioRolRepository.findByRol(prioridad);
+    }
 
     @Override
     public void update(int id, UsuarioRolModel usuarioRol) {

@@ -1,5 +1,7 @@
 package com.crud.democrud.models;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,12 +10,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "usuariorol")
 public class UsuarioRolModel {
-    @Id
-    @Column(name = "id_usuario")
-    private Long idUsuario;
 
+    @Id
     @Column(name = "id_rol")
     private int idRol;
+
+    @Column(name = "id_usuario")
+    private Long idUsuario;
 
     @Column(name = "rol")
     private String rol;
