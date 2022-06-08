@@ -1,6 +1,7 @@
 package com.crud.democrud.services;
 
 import com.crud.democrud.models.UsuarioModel;
+import com.crud.democrud.models.UsuarioRolModel;
 import com.crud.democrud.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,16 @@ public class UsuarioService {
         }
     }
 
+    public void update(Long id, UsuarioModel usuario) {
+        Optional<UsuarioModel> existsUsuario = usuarioRepository.findById(id);
+        if (existsUsuario.isPresent()) {
 
+            existsUsuario.get().setId(usuario.getId());
+            existsUsuario.get().setNombre(usuario.getNombre());
+            existsUsuario.get().setEmail(usuario.getEmail());
+            existsUsuario.get().setPrioridad(usuario.getPrioridad());
+            usuarioRepository.save(existsUsuario.get());
+        }
+    }
     
 }
