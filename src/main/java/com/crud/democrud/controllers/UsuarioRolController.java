@@ -30,7 +30,7 @@ public class UsuarioRolController {
     }
 
     @GetMapping(path = "/{id}")
-    public Optional<UsuarioModel> getById(@PathVariable("id") int id)
+    public Optional<UsuarioModel> getById(@PathVariable("id") int id){
         usuarioRolService.getById(id);
     }
     
