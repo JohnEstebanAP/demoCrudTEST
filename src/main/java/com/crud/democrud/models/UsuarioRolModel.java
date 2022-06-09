@@ -1,29 +1,30 @@
 package com.crud.democrud.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "usuariorol")
 public class UsuarioRolModel {
 
     @Id
-    @Column(name = "id_rol")
-    private int idRol;
+    @Column(name = "idrol")
+    private Integer idRol;
 
-    @Column(name = "id_usuario")
-    private Long idUsuario;
+    //@ManyToMany()
+
+    @ManyToOne()
+    @JoinColumn(name = "idusuari", referencedColumnName = "id")
+    private UsuarioModel idUsuario;
 
     @Column(name = "rol")
     private String rol;
 
-    public UsuarioRolModel(Long idUsuario, int idRol, String rol) {
-        this.idUsuario = idUsuario;
+    public UsuarioRolModel(Integer idRol, UsuarioModel idUsuario, String rol) {
         this.idRol = idRol;
+        this.idUsuario = idUsuario;
         this.rol = rol;
     }
 
@@ -31,11 +32,11 @@ public class UsuarioRolModel {
 
     }
 
-    public Long getIdUsuario() {
+    public UsuarioModel getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(UsuarioModel idUsuario) {
         this.idUsuario = idUsuario;
     }
 
@@ -43,7 +44,7 @@ public class UsuarioRolModel {
         return idRol;
     }
 
-    public void setIdRol(int idRol) {
+    public void setIdRol(Integer idRol) {
         this.idRol = idRol;
     }
 

@@ -14,7 +14,7 @@ public interface UsuarioRolService {
     
     List<UsuarioRolModel> getAll();
 
-    Optional<UsuarioRolModel> getById(int id);
+    Optional<UsuarioRolModel> getById(Integer id);
 
     void update(int id, UsuarioRolModel rol);
     

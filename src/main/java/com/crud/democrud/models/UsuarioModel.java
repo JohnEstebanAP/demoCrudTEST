@@ -1,5 +1,7 @@
 package com.crud.democrud.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,6 +16,8 @@ public class UsuarioModel {
     private String nombre;
     private String email;
     private Integer prioridad;
+
+
 
     public void setPrioridad(Integer prioridad) {
         this.prioridad = prioridad;
@@ -56,5 +60,4 @@ public class UsuarioModel {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }

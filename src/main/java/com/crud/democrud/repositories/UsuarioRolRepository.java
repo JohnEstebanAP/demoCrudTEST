@@ -10,5 +10,5 @@ import java.util.ArrayList;
 
 @Repository
 public interface UsuarioRolRepository extends CrudRepository<UsuarioRolModel, Integer> {
-    public abstract ArrayList<UsuarioRolModel> findByRol(Integer id_rol);
+    public abstract ArrayList<UsuarioRolModel> findByRol(Integer idrol);
 }

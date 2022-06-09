@@ -1,25 +1,10 @@
 package com.crud.democrud.controllers;
 
-
 /*
-* Haga lo siguiente:
-- agregue un endPoint de actualizacion de usuario
-- incorpore una nueva entidad/modelo(UsuarioRol) que tenga
-  los campos (idUsuario,idRol,Rol("vendedor","cajero","consultor",etc..))
-  un usuario puede en un momento tener 1 o mas roles asociados.
-  debe haber una relacion (Usuario - UsuarioRol):
         @ManyToOne Relation
         @OneToMany Relation
         @OneToOne Relation
-        @ManyToMany Relation
-  aplique la que usted considere mas apropiada y en README
-  justifique ademas incorpore en este mismo README coloque
-varias ScreenShoot(capturas) de la ejecucion de la API REST.
 
-- implemente algunas pruebas unitarias a esa nueva entidad/modelo
-
-Debe registrar en la tabla de abajo su nombre completo y su repositorio
-de github con la solucion.
 * */
 import com.crud.democrud.models.UsuarioModel;
 import com.crud.democrud.models.UsuarioRolModel;
@@ -51,24 +36,24 @@ public class UsuarioRolController {
         usuarioRolService.create(usuarioRol);
     }
 
-    @GetMapping(path = "/{id_rol}")
-    public Optional<UsuarioRolModel> getById(@PathVariable("id_rol") int id_rol){
-        return this.usuarioRolService.getById(id_rol);
+    @GetMapping(path = "/{idrol}")
+    public Optional<UsuarioRolModel> getById(@PathVariable("idrol") Integer idrol){
+        return this.usuarioRolService.getById(idrol);
     }
 
     @GetMapping("/query")
-    public ArrayList<UsuarioRolModel> obtenerUsuarioPorPrioridad(@RequestParam("prioridad") int idRol) {
+    public ArrayList<UsuarioRolModel> obtenerUsuarioPorPrioridad(@RequestParam("idrol") Integer idRol) {
         return this.usuarioRolService.getByRol(idRol);
     }
 
-    @PutMapping("/{id_rol}")
-    public void update(@PathVariable int id_rol, @RequestBody UsuarioRolModel usuarioRol){
-        usuarioRolService.update(id_rol, usuarioRol);
+    @PutMapping("/{idrol}")
+    public void update(@PathVariable Integer idrol, @RequestBody UsuarioRolModel usuarioRol){
+        usuarioRolService.update(idrol, usuarioRol);
     }
 
-    @DeleteMapping("/{id_rol}")
-    public void delete(@PathVariable int id_rol){
-        usuarioRolService.delete(id_rol);
+    @DeleteMapping("/{idrol}")
+    public void delete(@PathVariable Integer idrol){
+        usuarioRolService.delete(idrol);
     }
 }
 

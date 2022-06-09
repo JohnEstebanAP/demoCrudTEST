@@ -30,12 +30,12 @@ public class UsuarioRolServiceImpl implements UsuarioRolService {
     }
 
     @Override
-    public Optional<UsuarioRolModel> getById(int id) {
+    public Optional<UsuarioRolModel> getById(Integer id) {
         return usuarioRolRepository.findById(id);
     }
 
-    public ArrayList<UsuarioRolModel>  getByRol(int prioridad) {
-        return usuarioRolRepository.findByRol(prioridad);
+    public ArrayList<UsuarioRolModel>  getByRol(Integer idrol) {
+        return usuarioRolRepository.findByRol(idrol);
     }
 
     @Override
