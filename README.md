@@ -9,6 +9,9 @@ Se utiliza una relación de mucho a uno para expresar que un (UsuarioRol) puede 
 
 ##IMÁGENES
 
+<h2>Pruebas Unitarias</h2>
+<img src="https://github.com/JohnEstebanAP/demoCrudTEST/blob/main/img/11.png?raw=true">
+
 
 <h2>función de actulizacion</h2>
 <img src="https://github.com/JohnEstebanAP/demoCrudTEST/blob/main/img/0.png?raw=true">
