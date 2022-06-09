@@ -4,7 +4,7 @@
 ejercicio de Springboot y MySQL donde debemos cearle la funcion de Update a la tabla de usuario y crear un UserRolModel, su tabla y atributos para relacionar con los usuarios donde un usuario puede en un momento tener 1 o mas roles asociados.
 
 
-##  Relación  @ManyToOne Relation
+##  Relación  @ManyToOne
 Se utiliza una relación de mucho a uno para expresar que un (UsuarioRol) puede tener uno o muchos (usuarios) con el mismo rol.
 
 
